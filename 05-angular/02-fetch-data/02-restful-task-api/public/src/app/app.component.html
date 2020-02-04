@@ -1,0 +1,73 @@
+<div class="root">
+  <div style="text-align:center">
+    <h1>
+      {{ title }}
+    </h1>
+  </div>
+  <h2>All of the Tasks</h2>
+
+  <button (click)="onButtonClick()">Get All Tasks</button>
+  <div *ngFor="let task of tasks">
+    {{ task.title }}
+    <button (click)="showTask(task._id)">Show</button>
+  </div>
+</div>
+
+<app-task *ngIf="task" [task]="task"></app-task>
+
+<router-outlet></router-outlet>
+
+<!-- <div class="root">
+    <div style="text-align:center">
+      <h1>
+        Restful Tasks CRUD
+      </h1>
+    </div>
+    <div class="container">
+      <div class="new">
+        {{ newTask | json }}
+        <h4>New Task</h4>
+
+        <form (submit)="onSubmit()">
+          <p>
+            Title: <input type="text" name="title" [(ngModel)]="newTask.title" />
+          </p>
+          <p>
+            Description:
+            <input type="text" name="description" [(ngModel)]="newTask.description" />
+          </p>
+          <p>
+            Completed:
+            <select name="completed" [(ngModel)]="newTask.completed">
+              <option value="true">True</option>
+              <option value="false">False</option>
+            </select>
+          </p>
+          <button>Add to the Chore List</button>
+        </form>
+      </div>
+      <div class="tasks">
+        <h2>All of the Tasks</h2>
+        <button (click)="onButtonClick()">Get All Tasks</button>
+        <div *ngFor="let t of tasks">
+          <p>{{ t.title }}</p>
+          <p>
+            <strong>{{ t.description }}</strong>
+          </p>
+          <button (click)="onEditTask(t)">Edit</button>
+          <div *ngIf="editTask._id === t._id" style="border:1px solid; text-align:center">
+            <form #editForm='ngForm' (submit)="onEditTaskSubmit(editForm.value)">
+              <input type="hidden" name="_id" [ngModel]="editTask._id">
+              <p>Title: <input type="text" name="title" [ngModel]="editTask.title"></p>
+              <p>Description: <input type="text" name="description" [ngModel]="editTask.description"></p>
+              <p>Completed: <input type="text" name="completed" [ngModel]="editTask.completed"></p>
+              <button>Update Task</button>
+            </form>
+          </div>
+          <button (click)="onDelete(t)">Delete</button>
+          <hr />
+        </div>
+      </div>
+    </div>
+  </div>
+  <router-outlet></router-outlet> -->

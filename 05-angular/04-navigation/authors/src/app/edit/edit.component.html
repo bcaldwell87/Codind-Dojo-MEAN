@@ -1,0 +1,10 @@
+<a [routerLink]="['']">Home</a>
+
+<p>Edit This Author:</p>
+<div class="add">
+  <form #editForm="ngForm" (submit)="editThisAuthor(editForm.value)">
+    <input type="hidden" name="_id" [ngModel]="editAuthor._id" />
+    <p>Name: <input type="text" name="name" [(ngModel)]="editAuthor.name" /></p>
+    <button>Update Author</button>
+  </form>
+</div>

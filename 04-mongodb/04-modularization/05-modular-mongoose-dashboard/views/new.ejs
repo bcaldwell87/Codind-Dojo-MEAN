@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add an Animal!</title>
+</head>
+<body>
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/animals/new">Add Animal</a>
+        </li>
+    </ul>
+    <div id="container">
+        <h1>Add an Animal!</h1>
+        <form action="/animals" method="post">
+            <h3>Name: <input type="text" name="name"></h3>
+            <h3>Age: <input type="text" name="age"></h3>
+            <h3>Color: <input type="text" name="color"></h3>
+            <input type="submit" value="Add Animal">
+        </form>
+        <% if(messages.animalform) { %>
+            <% for (var x of messages.animalform) { %>
+                <p id="error"><%= x %></p>
+            <% } %>
+        <% } %>
+    </div>
+</body>
+</html>

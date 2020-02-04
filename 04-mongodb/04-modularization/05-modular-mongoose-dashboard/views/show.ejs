@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Details</title>
+</head>
+<body>
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/animals/new">Add Animal</a>
+        </li>
+    </ul>
+    <div id="container">
+        <h1><%= animal.name %></h1>
+        <h2>Age: <%= animal.age %></h2>
+        <h2>Color: <%= animal.color %></h2>
+        <a href="/animals/edit/<%= animal._id %>"><button class="#">Edit Animal</button></a>
+        <form action="/animals/destroy/<%= animal._id %>" method="post">
+            <button class="#">Delete Animal</button>
+        </form>
+    </div>
+</body>
+</html>

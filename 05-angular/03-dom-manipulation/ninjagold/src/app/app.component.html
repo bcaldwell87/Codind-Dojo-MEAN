@@ -1,0 +1,50 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Ninja Gold
+  </h1>
+</div>
+<div class="container">
+  <h2>Current Gold: {{ count }}</h2>
+
+  <div class="placeholder">
+    <h2>Farm</h2>
+    <p>earns 10-20 gold</p>
+    <form (submit)="onFarm()">
+      <button>Find Gold</button>
+    </form>
+  </div>
+  <div class="placeholder">
+    <h2>Cave</h2>
+    <p>earns 5-10 gold</p>
+    <form (submit)="onCave()">
+      <button>Find Gold</button>
+    </form>
+  </div>
+  <div class="placeholder">
+    <h2>House</h2>
+    <p>earns 2-5 gold</p>
+    <form (submit)="onHouse()">
+      <button>Find Gold</button>
+    </form>
+  </div>
+  <div class="placeholder">
+    <h2>Casino</h2>
+    <p>earns/takes 0-50 gold</p>
+    <form (submit)="onCasino()">
+      <button>Find Gold</button>
+    </form>
+  </div>
+  <p>Activity:</p>
+  <div class="activity">
+    <div *ngFor="let x of activity">
+      <p *ngIf="x.indexOf('lost') > -1">
+        <span class="red">{{ x }}</span>
+      </p>
+      <p *ngIf="x.indexOf('lost') === -1">
+        <span class="green">{{ x }}</span>
+      </p>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

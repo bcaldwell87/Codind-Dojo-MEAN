@@ -1,0 +1,17 @@
+
+* {
+    text-align: center;
+}
+body {
+    background-color: white;
+}
+button {
+    width: 10rem;
+    height: 5rem;
+    margin: 4rem;
+    margin-top: 25rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 1rem;
+}

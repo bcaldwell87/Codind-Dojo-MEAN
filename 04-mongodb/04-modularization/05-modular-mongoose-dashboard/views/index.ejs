@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Animal Dashboard</title>
+</head>
+<body>
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/animals/new">Add Animal</a>
+        </li>
+    </ul>
+    <div id="container">
+        <h1>Animals!!!</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Color</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for (var i in info) { %>
+                    <tr>
+                        <td><a href="/animals/<%= info[i]._id %>"><%= info[i].name %></a></td>
+                        <td><%= info[i].age %></td>
+                        <td><%= info[i].color %></td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

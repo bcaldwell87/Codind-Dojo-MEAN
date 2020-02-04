@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <% for (var x in info) { %>
+        <h2>Details page for: <%= info[x].name %></h2>
+        <a href="/cats"><img src="/images/lion-3317670__340.jpg"></a>
+        <p>Favorite Food: <%= info[x].favoritefood %></p>
+        <p>Age: <%= info[x].age %></p>
+        <p>Sleeping Spots: <% for (var i = 0; i < info[x].sleepingspots.length; i++) { %>
+          <ul>
+            <li>
+              <%= info[x].sleepingspots[i] %>
+            </li>
+          </ul>
+          <% } %></p>
+        <% } %>
+</body>
+</html>
